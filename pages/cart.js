@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import ItemCard from '../components/ItemCard'
+import CartCard from '../components/CartCard'
 import { useUser } from '../context/UserContext'
 
 export default function Checkout() {
@@ -13,7 +13,7 @@ export default function Checkout() {
         <title>Checkout</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main class="checkoutpage">
         <h1 class="cartcolor">{user.name}, let's checkout!</h1>
         <p class="cartcolor">You have {user.cart.length} items in your cart.</p>
         <div class="checkout">
@@ -21,7 +21,7 @@ export default function Checkout() {
             * to a component for each item in the cart
           */
             user.cart.map((item) => (
-              <ItemCard name={user.cart.name} img={user.cart.img} stock={user.cart.stock} price={user.cart.price} />
+              <CartCard name={item.name} img={item.img} stock={item.stock} price={item.price} />
             ))
           }
         </div>

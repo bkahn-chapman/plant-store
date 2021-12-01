@@ -17,12 +17,12 @@ export default function Home() {
 
   const { items, setItems } = useItems()
 
+  /* COULDN'T FIX */
   const addToCart = (itemName) => {
-    /* TODO: Write function that updates the
-     * user context object's cart 
-     * to include the added item
-    */
-    
+    updated = user.cart
+    updated.push(itemName.name, itemName.img, itemName.stock, itemName.price)
+    const newUser = useState({name: user.name, cart: updated})
+    setUser(newUser)
   }
 
   return (
@@ -33,7 +33,7 @@ export default function Home() {
       </Head>
       <main>
         <div className="top">
-        <h1>Hey there, {user.name}</h1>
+        <h1>Hey there, {user.name}!</h1>
         <Link href="/cart" >
           <div class="cart">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +48,7 @@ export default function Home() {
           * to display an ItemCard with the data for each
           */
             items.map((item) => (
-              <ItemCard name={item.name} img={item.img} stock={item.stock} price={item.price} />
+              <ItemCard name={item.name} img={item.img} stock={item.stock} price={item.price} add={addToCart} />
             ))
           }
         </div>

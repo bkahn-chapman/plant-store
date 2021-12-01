@@ -74,22 +74,11 @@ a {
   gap: 20px;
 }
 
-.checkout {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .card {
   flex: 1;
   overflow: hidden;
   min-width: 300px;
   border-radius: 20px;
-}
-
-.checkout .card {
-  min-width: 1000px;
 }
 
 .card .img-wrapper {
@@ -126,15 +115,61 @@ a {
   padding-bottom: 20px;
 }
 
-.checkout .card .content {
+.cartcard {
+  flex: 1;
   display: flex;
-  display: column;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 300px;
+  width: 100%;
+  border-radius: 20px;
+  max-height: 150px;
+  margin-top: 15px;
 }
 
-.checkout .card button {
-  width:0%;
+.cartcard .img-wrapper {
+  display: flex;
+  overflow: hidden;
+  max-height: 150px;
+  width: 750px;
+  align-items: center;
+  background-color: white;
+
+}
+.cartcard .img-wrapper img {
+  height: 17.5%;
+  width: 17.5%;
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 20px;
+}
+.cartcard .content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 150px;
+  background-color: white;
+  width: 250px;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
 
-.checkout .plant-name {
+.everything {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cartcard .content h2 {
+  padding: 5px 0;
+}
+
+.plant-name {
   color: green;
+}
+.cartcard .content .price {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
 }
